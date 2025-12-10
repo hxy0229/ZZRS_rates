@@ -366,7 +366,7 @@ def parse_match_data(text):
         is_winner = 0
         full_line = line.strip()
         # 只要包含 emoji 或者 'win' 字样即视为胜利
-        if emoji.emoji_count(full_line) > 0 or 'win' in full_line.lower():
+        if emoji.emoji_count(full_line) > 0 or 'win' in full_line.lower() or (']' in full_line and '[' in full_line):
              is_winner = 1
         
         # 清理副将名称中的emoji
